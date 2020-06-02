@@ -26,8 +26,12 @@ export class Subject {
 const subj = new Subject();
 const obs1 : Observer = {update : value => console.log('obs1: ' + value)};
 const obs2 : Observer = {update : value => console.log('obs2: ' + value)};
+
 subj.addObserver(obs1);
 subj.addObserver(obs2);
-subj.notify('both');
+subj.notify('First event for both');
+subj.notify('Second event for both');
+
 subj.removeObserver(obs1);
-subj.notify('one');
+console.log('\nobs1 removed');
+subj.notify('Third event only for one');

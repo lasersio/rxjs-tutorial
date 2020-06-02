@@ -3,7 +3,7 @@
 function createObservable(n : number)
 {
 	return new Observable(observer => {
-		for (let i = 0; i < 100; i++) {
+		for (let i = 0; i < 10; i++) {
 			if (i === n) observer.error('Something went wrong');
 
 			observer.next(i);
@@ -12,14 +12,14 @@ function createObservable(n : number)
 	});
 }
 
-createObservable(102).subscribe(
-	value => console.log('Observer got value: ' + value),
-	error => console.log('Observer got error: ' + error),
-	() => console.log('Observer completed!')
+createObservable(12).subscribe(
+	value => console.log('Observer1 got value: ' + value),
+	error => console.log('Observer1 got error: ' + error),
+	() => console.log('Observer1 completed!\n')
 );
 
-createObservable(42).subscribe(
-	value => console.log('Observer got value: ' + value),
-	error => console.log('Observer got error: ' + error),
-	() => console.log('Observer completed!')
+createObservable(2).subscribe(
+	value => console.log('Observer2 got value: ' + value),
+	error => console.log('Observer2 got error: ' + error),
+	() => console.log('Observer2 completed!\n')
 );
