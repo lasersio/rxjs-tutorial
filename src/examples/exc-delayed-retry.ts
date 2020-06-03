@@ -1,9 +1,7 @@
 ﻿import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, retryWhen } from 'rxjs/operators';
 
-const maxRetry = 5;
-
-export function delayedRetry(delayMs : number)
+export function delayedRetry(delayMs : number, maxRetry : number)
 {
 	let retries = 0;
 
