@@ -17,18 +17,39 @@ export class SearchWikiComponent {
 	model : any;
 	public searching = false;
 	searchFailed = false;
+	public immediateValue = '';
+	public searchTerm = '';
 
-	constructor(private _service : WikipediaService)
+	public example = `
+text$.pipe(
+   debounceTime(300),
+   distinctUntilChanged(),
+   tap(() => this.searching = true),
+   switchMap(term =>
+      this.wiki.search(term).pipe(
+         tap(() => this.searchFailed = false),
+         catchError(() => {
+            this.searchFailed = true;
+            return of([]);
+         }))
+   ),
+   tap(() => this.searching = false)
+);
+`;
+
+	constructor(private wiki : WikipediaService)
 	{
 	}
 
 	search = (text$ : Observable<string>) =>
 		text$.pipe(
+			tap(value => this.immediateValue = value),
 			debounceTime(300),
 			distinctUntilChanged(),
+			tap(value => this.searchTerm = value),
 			tap(() => this.searching = true),
 			switchMap(term =>
-				this._service.search(term).pipe(
+				this.wiki.search(term).pipe(
 					tap(() => this.searchFailed = false),
 					catchError(() => {
 						this.searchFailed = true;

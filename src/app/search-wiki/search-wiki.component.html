@@ -1,13 +1,25 @@
-A typeahead example that gets values from the <code>WikipediaService</code> from
-<a href="https://ng-bootstrap.github.io/#/components/typeahead/examples#http">ng bootstrap</a>
-<ul>
-	<li>remote data retrieval</li>
-	<li><code>debounceTime</code> operator</li>
-	<li><code>tap</code> operator</li>
-	<li><code>distinctUntilChanged</code> operator</li>
-	<li><code>switchMap</code> operator</li>
-	<li><code>catch</code> operator to display an error message in case of connectivity issue</li>
-</ul>
+<div class="row">
+	<div class="col-6">
+		<div class="mt-3">
+			A typeahead example that gets values from the <code>WikipediaService</code> from
+			<a href="https://ng-bootstrap.github.io/#/components/typeahead/examples#http">ng bootstrap</a>
+		</div>
+
+		<ul>
+			<li>remote data retrieval</li>
+			<li><code>debounceTime</code> operator</li>
+			<li><code>tap</code> operator</li>
+			<li><code>distinctUntilChanged</code> operator</li>
+			<li><code>switchMap</code> operator</li>
+			<li><code>catch</code> operator to display an error message in case of connectivity issue</li>
+		</ul>
+	</div>
+	<div class="col-6">
+		<pre>
+			{{ example }}
+		</pre>
+	</div>
+</div>
 
 <fieldset class="form-inline">
 	<div class="form-group">
@@ -21,4 +33,6 @@ A typeahead example that gets values from the <code>WikipediaService</code> from
 	</div>
 </fieldset>
 <hr>
+<pre>User input: {{ immediateValue }}</pre>
+<pre>Trying to search: {{ searchTerm }}</pre>
 <pre>Model: {{ model | json }}</pre>

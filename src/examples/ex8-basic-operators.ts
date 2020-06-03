@@ -1,5 +1,4 @@
-﻿
-import { from, of } from 'rxjs';
+﻿import { from, of } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
 
 const obs1$ = of('a', 'b', 'c').pipe(
@@ -21,6 +20,3 @@ obs1$.subscribe(value => console.log('Observer1 says: ' + value));
 
 console.log('\nObserver 2:');
 obs2$.subscribe(value => console.log('Observer2 says: ' + value));
-
-
-
