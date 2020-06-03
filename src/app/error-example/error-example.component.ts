@@ -54,7 +54,7 @@ export class ErrorExampleComponent implements OnInit {
 		return this.update(n - 1).pipe(
 			map(value => {
 				if (value % n) return value;
-				throw 'cannot be dividable by ' + n;
+				throw 'is not dividable by ' + n;
 			})
 		);
 	}
@@ -64,27 +64,27 @@ export class ErrorExampleComponent implements OnInit {
 		return of(this.value).pipe(
 			map(value => {
 				if (value % 2) return value;
-				throw 'cannot be dividable by 2';
+				throw 'is not dividable by 2';
 			}),
 			map(value => {
 				if (value % 3) return value;
-				throw 'cannot be dividable by 3';
+				throw 'is not dividable by 3';
 			}),
 			map(value => {
 				if (value % 4) return value;
-				throw 'cannot be dividable by 4';
+				throw 'is not dividable by 4';
 			}),
 			map(value => {
 				if (value % 5) return value;
-				throw 'cannot be dividable by 5';
+				throw 'is not dividable by 5';
 			}),
 			map(value => {
 				if (value % 6) return value;
-				throw 'cannot be dividable by 6';
+				throw 'is not dividable by 6';
 			}),
 			map(value => {
 				if (value % 7) return value;
-				throw 'cannot be dividable by 7';
+				throw 'is not dividable by 7';
 			})
 		);
 	}
@@ -95,31 +95,31 @@ export class ErrorExampleComponent implements OnInit {
 		return of(this.value).pipe(
 			map(value => {
 				if (value % 2) return value;
-				throw 'cannot be dividable by 2';
+				throw 'is not dividable by 2';
 			}),
 			map(value => {
 				if (value % 3) return value;
-				throw 'cannot be dividable by 3';
+				throw 'is not dividable by 3';
 			}),
 			catchError(error => {
-				if (error === 'cannot be dividable by 3') return of(this.value);
+				if (error === 'is not dividable by 3') return of(this.value);
 				throw error;
 			}),
 			map(value => {
 				if (value % 4) return value;
-				throw 'cannot be dividable by 4';
+				throw 'is not dividable by 4';
 			}),
 			map(value => {
 				if (value % 5) return value;
-				throw 'cannot be dividable by 5';
+				throw 'is not dividable by 5';
 			}),
 			map(value => {
 				if (value % 6) return value;
-				throw 'cannot be dividable by 6';
+				throw 'is not dividable by 6';
 			}),
 			map(value => {
 				if (value % 7) return value;
-				throw 'cannot be dividable by 7';
+				throw 'is not dividable by 7';
 			})
 		);
 	}
@@ -130,31 +130,31 @@ export class ErrorExampleComponent implements OnInit {
 		return of(this.value).pipe(
 			map(value => {
 				if (value % 2) return value;
-				throw 'cannot be dividable by 2';
+				throw 'is not dividable by 2';
 			}),
 			map(value => {
 				if (value % 3) return value;
-				throw 'cannot be dividable by 3';
+				throw 'is not dividable by 3';
 			}),
 			map(value => {
 				if (value % 4) return value;
-				throw 'cannot be dividable by 4';
+				throw 'is not dividable by 4';
 			}),
 			map(value => {
 				if (value % 5) return value;
-				throw 'cannot be dividable by 5';
+				throw 'is not dividable by 5';
 			}),
 			map(value => {
 				if (value % 6) return value;
-				throw 'cannot be dividable by 6';
+				throw 'is not dividable by 6';
 			}),
 			catchError(error => {
-				if (error === 'cannot be dividable by 3') return of(this.value);
+				if (error === 'is not dividable by 3') return of(this.value);
 				throw error;
 			}),
 			map(value => {
 				if (value % 7) return value;
-				throw 'cannot be dividable by 7';
+				throw 'is not dividable by 7';
 			})
 		);
 	}
