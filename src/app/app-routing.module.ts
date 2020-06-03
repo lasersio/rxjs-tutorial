@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { SearchWikiComponent } from './search-wiki/search-wiki.component';
 
 
 const routes : Routes = [
-	{path : 'first-component', component : AppComponent},
-	{path : 'second-component', component : AppComponent}
+	{path : 'search-wiki', component : SearchWikiComponent},
+	{path : 'second-component', component : SearchWikiComponent}
 ];
 
 @NgModule({
