@@ -8,11 +8,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchWikiComponent } from './search-wiki/search-wiki.component';
+import { ErrorExampleComponent } from './error-example/error-example.component';
 
 @NgModule({
 	declarations : [
 		AppComponent,
-		SearchWikiComponent
+		SearchWikiComponent,
+		ErrorExampleComponent
 	],
 	imports      : [
 		BrowserModule,

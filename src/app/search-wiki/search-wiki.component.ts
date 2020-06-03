@@ -17,7 +17,6 @@ export class SearchWikiComponent {
 	model : any;
 	public searching = false;
 	searchFailed = false;
-	public immediateValue = '';
 	public searchTerm = '';
 
 	public example = `
@@ -43,7 +42,6 @@ text$.pipe(
 
 	search = (text$ : Observable<string>) =>
 		text$.pipe(
-			tap(value => this.immediateValue = value),
 			debounceTime(300),
 			distinctUntilChanged(),
 			tap(value => this.searchTerm = value),
